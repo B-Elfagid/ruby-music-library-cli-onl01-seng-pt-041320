@@ -21,12 +21,10 @@ input = gets.strip
 end 
 end 
 
-def list_songs
-songs_sorted_by_name = Song.all.sort_by do |song|
-      song.name
-    end
-    songs_sorted_by_name.each.with_index(1) do |song,index|
-      puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+ def list_songs
+    sorted_library = self.library.sort_by {|song|song.name}
+    sorted_library.each do |song|
+      puts "#{sorted_library.index(song) + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
   end
 
