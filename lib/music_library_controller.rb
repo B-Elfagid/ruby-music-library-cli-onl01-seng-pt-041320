@@ -101,5 +101,5 @@ songs_sorted_by_artist = Artist.all.sort_by do |artist|
       unless song == nil
     end
   end
-
+end 
 end
