@@ -75,7 +75,7 @@ songs_sorted_by_artist = Artist.all.sort_by do |artist|
      end 
    end 
     
-    def list_of_songs_by_genre
+    def list_songs_by_genre
       puts "please enter the name of a genre:"
       input = gets.chomp
       if genre = Genre.find_by_name(input)
