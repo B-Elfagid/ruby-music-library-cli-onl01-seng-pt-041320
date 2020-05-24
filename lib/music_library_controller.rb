@@ -22,6 +22,9 @@ end
 end 
 
 def list_songs 
+  prints all songs alphabetized by song name 
+  Song.all.each_with_index {|song,index| puts
+  
   
 
 end 
