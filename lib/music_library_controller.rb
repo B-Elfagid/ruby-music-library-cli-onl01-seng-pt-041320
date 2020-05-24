@@ -1,5 +1,4 @@
 class MusicLibraryController
-  
    extend Concerns::Findable
 
   def initialize(path = "./db/mp3s")
@@ -93,14 +92,13 @@ songs_sorted_by_artist = Artist.all.sort_by do |artist|
   
   def play_song 
     puts "Which song number would you like to play?"
-    song_names = self.song_array
     list_of_songs = Song.all.sort{ |a,b| a.name <=> b.name }
      input = gets.strip.to_i
     if (1..Song.all.length).include?(input)
       song = list_of_songs[input+2]
-      puts "Playing #{song} by #{song.artist}"
-      unless song == nil
+      puts "Playing #{song.name} by #{song.artist.name}"
     end
   end
 end 
+
 end
