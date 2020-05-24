@@ -62,6 +62,9 @@ songs_sorted_by_artist = Artist.all.sort_by do |artist|
   end 
    
    def list_songs_by_artist
+     puts "Please enter the name of the artist:"
+     input = gets.chomp
+     if artist = Artist.find_by_name(input)
      
   
 end 
