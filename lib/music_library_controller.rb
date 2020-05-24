@@ -91,5 +91,6 @@ songs_sorted_by_artist = Artist.all.sort_by do |artist|
   
   def play_song 
     
+    
   
 end 
