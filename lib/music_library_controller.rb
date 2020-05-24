@@ -52,6 +52,11 @@ songs_sorted_by_artist = Artist.all.sort_by do |artist|
   end
   
   def list_genres
+    songs_sorted_by_genre =Genre.all.sort_by do |genre|
+      genre.name
+    end 
+    
+    songs_sorted_by_genre = Genre.all.sort_by
    
   
 end 
