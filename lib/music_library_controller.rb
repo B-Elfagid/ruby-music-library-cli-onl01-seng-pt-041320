@@ -101,4 +101,4 @@ songs_sorted_by_artist = Artist.all.sort_by do |artist|
     end
   end
 end
-end 
+
