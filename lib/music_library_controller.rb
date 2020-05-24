@@ -100,8 +100,6 @@ songs_sorted_by_artist = Artist.all.sort_by do |artist|
       song = Song.find_by_name(chosen_input)
       puts "Playing #{song.name} by #{song.artist.name}" unless song == nil
     end
-
-  end
-end 
+    end
 
 end
