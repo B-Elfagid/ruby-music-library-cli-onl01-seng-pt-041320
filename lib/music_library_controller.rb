@@ -91,9 +91,14 @@ songs_sorted_by_artist = Artist.all.sort_by do |artist|
     end 
   end 
   
-  def play_song
-    song = Song.all[gets.to_i - 1]
-    puts "Playing #{song.artist.name} - #{song.name} - #{song.genre.name}"
+  def play_song 
+    puts "Which song number would you like to play?"
+    list_of_songs = Song.all.sort{ |a,b| a.name <=> b.name }
+     input = gets.strip.to_i
+    if (1..Song.all.length).include?(input)
+      song = list_of_songs[input+2]
+      puts "Playing #{song} by #{song.artist}"
+    end
   end
 
 end
