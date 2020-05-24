@@ -43,13 +43,22 @@ end
 end
 
 def list_artists
-songs_sorted_by_artist = Artist.all.sort_by do |artist| #returns an array of artists sorted by artist name
-    artist.name
-    end
-    songs_sorted_by_artist.each.with_index(1) do |artist,index|
-      puts "#{index}. #{artist.name}"
-    end
+songs_sorted_by_artist = Artist.all.sort_by do |artist| 
+  artist.name
+  end
+  songs_sorted_by_artist.each.with_index(1) do |artist,index|
+  puts "#{index}. #{artist.name}"
+  end
   end
   
+  def list_genre
+    songs_sorted_by_genre = Genre.all.sort_by do |genre|
+      genre.name
+    end
+    
+    songs_sorted_by_genre.each.with_index(1) do |genre,index|
+    puts "#{index}. #{genre.name}"
+  end
+end 
   
 end 
