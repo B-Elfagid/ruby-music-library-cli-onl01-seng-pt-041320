@@ -96,4 +96,5 @@ songs_sorted_by_artist = Artist.all.sort_by do |artist|
     answer = gets.chomp.to_i
     puts "Playing #{Song.all[answer-1].artist.name} - #{Song.all[answer-1].name} - #{Song.all[answer-1].genre.name}"
 end
+end 
 
