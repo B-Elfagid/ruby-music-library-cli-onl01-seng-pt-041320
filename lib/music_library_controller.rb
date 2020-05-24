@@ -57,5 +57,3 @@ end
       puts "Genre does not exist"
     end
   end
-  
-end 
