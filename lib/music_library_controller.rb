@@ -56,7 +56,10 @@ songs_sorted_by_artist = Artist.all.sort_by do |artist|
       genre.name
     end 
     
-    songs_sorted_by_genre = Genre.all.sort_by
+    songs_sorted_by_genre.each.with_index(1) do |genre,index|
+      puts "#{index}. #{genre.name}"
+    end 
+  end 
    
   
 end 
