@@ -61,5 +61,7 @@ songs_sorted_by_artist = Artist.all.sort_by do |artist|
     end 
   end 
    
+   def list_songs_by_artist
+     
   
 end 
