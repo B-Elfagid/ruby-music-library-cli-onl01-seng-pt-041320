@@ -1,6 +1,4 @@
 class MusicLibraryController
-  
-  class MusicLibraryController
 
   def initialize(path = "./db/mp3s")
     MusicImporter.new(path).import
@@ -35,5 +33,38 @@ class MusicLibraryController
   def list_songs
     Song.all.each_with_index {|song,index|puts "#{index+1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"}
   end
-end 
+
+  def list_artists
+    Artist.all.each {|artist| puts artist.name}
+  end
+
+  def list_genres
+    Genre.all.each {|genre| puts genre.name}
+  end
+
+  def play_song
+    song = Song.all[gets.to_i - 1]
+    puts "Playing #{song.artist.name} - #{song.name} - #{song.genre.name}"
+  end
+
+  def list_artist
+    puts "Enter artist"
+    specific_artist = gets.chomp
+    if Artist.find_by_name(specific_artist) != nil
+      Artist.find_by_name(specific_artist).songs.each {|song| puts "#{song.artist.name} - #{song.name} - #{song.genre.name}"}
+    else
+      puts "Artist does not exist"
+    end
+  end
+
+  def list_genre
+    puts "Enter genre"
+    specific_genre = gets.chomp
+    if Genre.find_by_name(specific_genre) != nil
+      Genre.find_by_name(specific_genre).songs.each {|song| puts "#{song.artist.name} - #{song.name} - #{song.genre.name}"}
+    else
+      puts "Genre does not exist"
+    end
+  end
+
 end 
