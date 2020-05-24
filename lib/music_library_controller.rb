@@ -97,6 +97,7 @@ songs_sorted_by_artist = Artist.all.sort_by do |artist|
     if (1..Song.all.length).include?(input)
       song = list_of_songs[input+2]
       puts "Playing #{song.name} by #{song.artist.name}"
+      unless song == nil
     end
   end
 end 
