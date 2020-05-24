@@ -31,11 +31,20 @@ when "list genre"
 list_songs_by_genre
 when "play song"
 play_song
-end 
-end 
-end 
+when "list artist"
+list_artist
+when "list genre"
+list_genre
+when "exit"
+puts "Goodbye" 
+else
+puts "invalid action"
+end
+end
+end
 
- def list_songs
-    Song.all.each_with_index {|song,index|puts "#{index+1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"}
-  end
-end 
+def list_songs
+ Song.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |song, index|
+        puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+ end
+end
