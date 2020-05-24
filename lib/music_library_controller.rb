@@ -41,4 +41,5 @@ end
   puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
   end
 end
+end 
 
