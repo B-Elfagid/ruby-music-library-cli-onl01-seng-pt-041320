@@ -64,7 +64,15 @@ songs_sorted_by_artist = Artist.all.sort_by do |artist|
    def list_songs_by_artist
      puts "Please enter the name of the artist:"
      input = gets.chomp
-     #if artist = Artist.find_by_name(input)
+     if artist = Artist.find_by_name(input)
+       songs_sorted_by_name = artist.songs.sort_by do |song|
+         song.name
+       end 
+       
+       songs_sorted_by_name.each.with_index(1) do |song,index|
+         puts "#{index}. #{song.name} - #{song.genre.name}"
+       end 
+     end 
    end 
      
   
